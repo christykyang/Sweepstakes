@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    class Program
+    class Simulation
     {
-        static void Main(string[] args)
+        //member variables (HAS A)
+
+        //constructor (SPAWNER)
+
+        //member methods (CAN DO)
+        public void CreateMarketingFirmWithManager()
         {
 
         }

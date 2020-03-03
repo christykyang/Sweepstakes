@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    class Program
+    public interface ISweepstakesManager
     {
-        static void Main(string[] args)
-        {
-
-        }
+        void InseartSweepstakes(Sweepstakes sweepstakes);
+        Sweepstakes GetSweepstakes();
+            
     }
 }

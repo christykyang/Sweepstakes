@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    class Program
+    public static class UserInterface
     {
-        static void Main(string[] args)
+        public static string GetUserInputFor(string input)
         {
-
+            return input;
         }
     }
 }
