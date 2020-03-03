@@ -9,16 +9,20 @@ namespace SweepstakesProject
     public class MarketingFirm
     {
         //member variables (HAS A)
-        //ISweepstakesManager manager =
+        ISweepstakesManager sweepstakesManager;
         
         //constructor (SPAWNER)
         public MarketingFirm(ISweepstakesManager manager)
         {
-
+            sweepstakesManager = manager;
         }
         //member methods (CAN DO)
         public void CreateSweepstake()
         {
+            UserInterface.PromptUser("What would you like to call your sweepstake?");
+            Sweepstakes newSweepstakes = new Sweepstakes(UserInterface.GetUserInputFor());
+            
+            
 
         }
     }

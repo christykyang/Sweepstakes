@@ -11,12 +11,19 @@ namespace SweepstakesProject
         //member variables (HAS A)
         Queue<Sweepstakes> queue;
         //constructor (SPAWNER)
+        public SweepstakesQueueManager()
+        {
+
+        }
 
         //member methods (CAN DO)
         public void InsertSweepstakes (Sweepstakes sweepstakes)
         {
-
+            queue.Enqueue(sweepstakes);
         }
-        //Sweepstakes GetSweepstakes();
+        Sweepstakes GetSweepstakes()
+        {
+            return queue.Dequeue();
+        }
     }
 }

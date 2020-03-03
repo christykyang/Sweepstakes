@@ -9,10 +9,10 @@ namespace SweepstakesProject
     public class Contestant
     {
         //member variabless (HAS A)
-        string firstName = "";
-        string lastName = "";
-        string emailAddress = "";
-        int registrationNumber = 0;
+        public string firstName = "";
+        public string lastName = "";
+        public string emailAddress = "";
+        public int registrationNumber = 0;
 
         //constructor (SPAWNER)
         public Contestant()
@@ -26,21 +26,18 @@ namespace SweepstakesProject
         //member methods (CAN DO)
         public void GetFirstName()
         {
-            Console.WriteLine("What is your first name?");
-            firstName = Console.ReadLine();
-            UserInterface.GetUserInputFor(firstName);
+            UserInterface.PromptUser("What is your first name?");
+            firstName = UserInterface.GetUserInputFor();
         }
         public void GetLastName()
         {
-            Console.WriteLine("What is your last name?");
-            lastName = Console.ReadLine();
-            UserInterface.GetUserInputFor(lastName);
+            UserInterface.PromptUser("What is your last name?");
+            lastName = UserInterface.GetUserInputFor();
         }
         public void GetEmail()
         {
-            Console.WriteLine("What is your email address?");
-            emailAddress = Console.ReadLine();
-            UserInterface.GetUserInputFor(emailAddress);
+            UserInterface.PromptUser("What is your email address?");
+            emailAddress = UserInterface.GetUserInputFor();
         }
         public void GenerateNumber()
         {

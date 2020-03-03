@@ -12,23 +12,31 @@ namespace SweepstakesProject
         Dictionary<int, Contestant> contestants;
         string sweepstakesName;
         string Name;
+        int numberOfRegisteredContestants;
+        Random rnd;
+        int winner;
         //constructor (SPAWNER)
         public Sweepstakes(string sweepstakesName)
         {
-
+            rnd = new Random();
+            numberOfRegisteredContestants = 0;
         }
         //member methods (CAN DO)
         public void RegisterContestant(Contestant contestant)
         {
-
+            numberOfRegisteredContestants++;
+            contestants.Add(contestant.registrationNumber, contestant);
+            Name = "";
         }
-        //public int PickWinner()
-        //{
-        //    return;
-        //}
-        public void PrintContestantInfo(Contestant contestant)
+        public int PickWinner()
         {
-
+            //need to add KEYvalue
+            winner = rnd.Next(numberOfRegisteredContestants);
+            return winner;
+        }
+        public void PrintContestantInfo(Contestant winner)
+        {
+            Console.WriteLine("The winner of this sweepstakes is " + winner.firstName + winner.lastName);
         }
     }
 }

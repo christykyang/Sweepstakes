@@ -8,9 +8,15 @@ namespace SweepstakesProject
 {
     public static class UserInterface
     {
-        public static string GetUserInputFor(string input)
+
+        public static string GetUserInputFor()
         {
+            string input = Console.ReadLine();
             return input;
+        }
+        public static void PromptUser(string messageToUser)
+        {
+            Console.WriteLine(messageToUser);
         }
     }
 }

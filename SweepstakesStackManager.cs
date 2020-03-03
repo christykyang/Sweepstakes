@@ -12,12 +12,18 @@ namespace SweepstakesProject
         Stack<Sweepstakes> stack;
 
         //constructor (SPAWNER)
-
+        public SweepstakesStackManager()
+        {
+            
+        }
         //member methods (CAN DO)
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-
+            stack.Push(sweepstakes);
         }
-        //Sweepstakes GetSweepstakes();
+        Sweepstakes GetSweepstakes()
+        {
+            return stack.Pop();
+        }
     }
 }
