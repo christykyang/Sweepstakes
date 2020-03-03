@@ -21,9 +21,6 @@ namespace SweepstakesProject
         {
             UserInterface.PromptUser("What would you like to call your sweepstake?");
             Sweepstakes newSweepstakes = new Sweepstakes(UserInterface.GetUserInputFor());
-            
-            
-
         }
     }
 }

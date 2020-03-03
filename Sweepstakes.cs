@@ -10,23 +10,26 @@ namespace SweepstakesProject
     {
         //member variables (HAS A)
         Dictionary<int, Contestant> contestants;
-        string sweepstakesName;
-        string Name;
+        string name;
         int numberOfRegisteredContestants;
         Random rnd;
         int winner;
+        public string Name
+        {
+            get { return name; }
+        }
         //constructor (SPAWNER)
         public Sweepstakes(string sweepstakesName)
         {
             rnd = new Random();
             numberOfRegisteredContestants = 0;
+            name = sweepstakesName;
         }
         //member methods (CAN DO)
         public void RegisterContestant(Contestant contestant)
         {
             numberOfRegisteredContestants++;
             contestants.Add(contestant.registrationNumber, contestant);
-            Name = "";
         }
         public int PickWinner()
         {
