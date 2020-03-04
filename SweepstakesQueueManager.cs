@@ -6,22 +6,21 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    class SweepstakesQueueManager //: ISweepstakesManager
+    class SweepstakesQueueManager : ISweepstakesManager
     {
         //member variables (HAS A)
         Queue<Sweepstakes> queue;
         //constructor (SPAWNER)
         public SweepstakesQueueManager()
         {
-
+            queue = new Queue<Sweepstakes>();
         }
-
         //member methods (CAN DO)
         public void InsertSweepstakes (Sweepstakes sweepstakes)
         {
             queue.Enqueue(sweepstakes);
         }
-        Sweepstakes GetSweepstakes()
+        public Sweepstakes GetSweepstakes()
         {
             return queue.Dequeue();
         }

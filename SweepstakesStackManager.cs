@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    public class SweepstakesStackManager //: ISweepstakesManager
+    public class SweepstakesStackManager : ISweepstakesManager
     {
         //member variables (HAS A)
         Stack<Sweepstakes> stack;
@@ -14,14 +14,14 @@ namespace SweepstakesProject
         //constructor (SPAWNER)
         public SweepstakesStackManager()
         {
-            
+            stack = new Stack<Sweepstakes>();
         }
         //member methods (CAN DO)
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
             stack.Push(sweepstakes);
         }
-        Sweepstakes GetSweepstakes()
+        public Sweepstakes GetSweepstakes()
         {
             return stack.Pop();
         }

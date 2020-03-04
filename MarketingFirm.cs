@@ -10,7 +10,7 @@ namespace SweepstakesProject
     {
         //member variables (HAS A)
         ISweepstakesManager sweepstakesManager;
-        
+
         //constructor (SPAWNER)
         public MarketingFirm(ISweepstakesManager manager)
         {
