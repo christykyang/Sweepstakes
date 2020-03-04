@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    public class Sweepstakes
+    public class Sweepstakes 
     {
         //member variables (HAS A)
         Dictionary<int, Contestant> contestants;
@@ -24,12 +24,13 @@ namespace SweepstakesProject
             rnd = new Random();
             numberOfRegisteredContestants = 0;
             name = sweepstakesName;
+            contestants = new Dictionary<int, Contestant>();
         }
         //member methods (CAN DO)
         public void RegisterContestant(Contestant contestant)
         {
             numberOfRegisteredContestants++;
-            contestants.Add(contestant.registrationNumber, contestant);
+            contestants.Add(contestant.RegistrationNumber, contestant);
         }
         public int PickWinner()
         {
@@ -37,9 +38,23 @@ namespace SweepstakesProject
             winner = rnd.Next(numberOfRegisteredContestants);
             return winner;
         }
-        public void PrintContestantInfo(Contestant winner)
+        public void PrintContestantInfo(Contestant contestant)
         {
-            Console.WriteLine("The winner of this sweepstakes is " + winner.firstName + winner.lastName);
+            Console.WriteLine("Contestant number " + contestant.RegistrationNumber + " is " + contestant.firstName + " " + contestant.lastName + ".");
+        }
+        public void NotifyContestants(Contestant winner, Contestant contestant)
+        {
+            for (int i = 0; i < contestants.Count; i++)
+            {
+                if (contestant.RegistrationNumber == winner.RegistrationNumber)
+                {
+                    winner.NotifyWinner(winner);
+                }
+                else
+                {
+                    contestant.NotifyLoser(contestant);
+                }
+            }
         }
     }
 }

@@ -6,24 +6,36 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    public class Contestant
+    public class Contestant : IContestant
     {
         //member variabless (HAS A)
-        public string firstName = "";
-        public string lastName = "";
-        public string emailAddress = "";
-        public int registrationNumber = 0;
+        public string firstName;
+        public string lastName;
+        public string emailAddress;
+        private int registrationNumber;
+        public int RegistrationNumber
+        {
+            get { return registrationNumber; }
+        }
 
         //constructor (SPAWNER)
         public Contestant()
         {
-            GetFirstName();
-            GetLastName();
-            GetEmail();
-            GenerateNumber();
+            firstName = "";
+            lastName = "";
+            emailAddress = "";
+            registrationNumber = 0;
         }
 
         //member methods (CAN DO)
+        public void NotifyWinner(IContestant winner)
+        {
+            Console.WriteLine("Congratulations, you win! Please respond to claim your prize.");
+        }
+        public void NotifyLoser(IContestant contestant)
+        {
+            Console.WriteLine("Sorry, you did not win the sweepstakes. If you would like, please enter our new sweepstakes.");
+        }
         public void GetFirstName()
         {
             UserInterface.PromptUser("What is your first name?");
